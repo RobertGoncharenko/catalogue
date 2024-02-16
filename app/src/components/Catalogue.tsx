@@ -1,25 +1,10 @@
-import { Box, Button, Grid, List, SvgIcon, SvgIconProps } from "@mui/material";
+import { Box, Button, Grid, List} from "@mui/material";
 import items from "../constants/items";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
 import Search from "./Search";
-
-const ListIcon = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <FormatListBulletedIcon />
-        </SvgIcon>
-    )
-}
-const GridIcon = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <GridViewIcon />
-        </SvgIcon>
-    )
-}
 
 const Catalogue = () => {
     const [isGrid, setIsGrid] = useState(false);
@@ -28,14 +13,15 @@ const Catalogue = () => {
         <>
             <Box 
                 display="flex"
-                justifyContent="space-around"    
+                justifyContent="space-between"
+                alignContent={"center"} 
             >   
-                <Box mr="40px">
+                
                     <Search />
-                </Box>
+                
                 <Box>
-                    <Button onClick={() => setIsGrid(false)}><ListIcon/></Button>
-                    <Button onClick={() => setIsGrid(true)}><GridIcon /></Button>
+                    <Button onClick={() => setIsGrid(false)}><FormatListBulletedIcon /></Button>
+                    <Button onClick={() => setIsGrid(true)}><GridViewIcon /></Button>
                 </Box>
             </Box>
 
@@ -48,7 +34,7 @@ const Catalogue = () => {
                     ))}
                 </Grid>
             ) : (
-                <List>
+                <List >
                     {items.map(item => (
                         <ProductCard item={item} key={item.id} />
                     ))}

@@ -1,5 +1,12 @@
 import { FunctionComponent } from "react";
-import { Card, CardContent, CardMedia, ListItem, Typography } from "@mui/material";
+import {
+   Button,
+   Card,
+   CardContent,
+   CardMedia,
+   ListItem,
+   Typography,
+} from "@mui/material";
 import { Product } from "../types";
 
 type ProductCardProps = {
@@ -20,6 +27,7 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
                <Typography variant="h5">{item.title}</Typography>
                <Typography variant="h6">{item.price}$</Typography>
                <Typography variant="body2">{item.description}</Typography>
+               <Button variant="text">Comprar</Button>
             </CardContent>
          </Card>
       </ListItem>

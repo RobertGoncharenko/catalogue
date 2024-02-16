@@ -66,7 +66,7 @@ const items: Product[] = [
     },
     {
         id: 10,
-        image:"",
+        image:"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmzIfcR-up0OxQB8UeBC34Jj9-cS2EhojamRWStFacteAeXF8TXf7i9tkDW43NrlJbcHDyChsy5811U29STkveLUijSK4uAavr-6TcfjeIvoSyeFVdpv-17xe5zgVKwyb9cl4YxFQXD2U&usqp=CAc",
         title: "Фотоаппарат Sony Alpha A7 III",
         price: 1999,
         description: "Профессиональный беззеркальный фотоаппарат с высоким разрешением, быстрым автофокусом и высокой чувствительностью. Идеальный выбор для фотографии и видеосъемки."
