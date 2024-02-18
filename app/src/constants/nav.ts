@@ -12,6 +12,10 @@ const nav: NavItem[] = [
         link: "/items",
         caption: "Catalogue",
     },
+    {
+        link: "/about",
+        caption: "About Us"
+    }
 ];
 
 export default nav;

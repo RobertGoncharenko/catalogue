@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { Drawer, IconButton, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
