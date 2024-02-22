@@ -3,6 +3,7 @@ import routes from "./constants/routes";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./styles/theme";
 import {
+   Badge,
    Box,
    Container,
    CssBaseline,
@@ -12,6 +13,7 @@ import {
 import nav from "./constants/nav";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuBurger from "./components/MenuBerger";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const router = createBrowserRouter(routes);
 
@@ -39,8 +41,14 @@ function App() {
                      </Link>
                   ))}
                </Box>
-               <Box>
-                  <ShoppingCartIcon />
+               <Box 
+                  display="flex"
+                  justifyContent="space-between"
+               >
+                  <AccountCircleIcon sx={{mr: 2}}/>
+                  <Badge color="primary" badgeContent={1}>
+                     <ShoppingCartIcon />
+                  </Badge>
                </Box>
             </Box>
          </Container>
