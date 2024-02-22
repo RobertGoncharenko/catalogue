@@ -14,15 +14,19 @@ import nav from "./constants/nav";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuBurger from "./components/MenuBerger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import useCartStore from "./store/store";
 
 const router = createBrowserRouter(routes);
 
-
 function App() {
+
+   const {items} = useCartStore();
+   const count: number = items.length;
+
    return (
       <ThemeProvider theme={theme}>
          <CssBaseline />
-         <Container maxWidth="md">
+         <Container maxWidth="lg">
             <Box
                component="header"
                mt={2}
@@ -41,14 +45,13 @@ function App() {
                      </Link>
                   ))}
                </Box>
-               <Box 
-                  display="flex"
-                  justifyContent="space-between"
-               >
-                  <AccountCircleIcon sx={{mr: 2}}/>
-                  <Badge color="primary" badgeContent={1}>
+               <Box display="flex" justifyContent="space-between" color="#2080e0">
+                  <AccountCircleIcon sx={{ mr: 2 }} />
+                  <Link href="/cart" mx={1}>
+                  <Badge color="error" badgeContent={count}>
                      <ShoppingCartIcon />
                   </Badge>
+                  </Link>
                </Box>
             </Box>
          </Container>

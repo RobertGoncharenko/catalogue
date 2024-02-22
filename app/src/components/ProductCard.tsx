@@ -9,15 +9,21 @@ import {
    Typography,
 } from "@mui/material";
 import { Product } from "../types";
+import useCartStore from "../store/store";
 
 type ProductCardProps = {
    item: Product;
 };
 
+
 const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
+   const { addToCart } = useCartStore((state) => ({
+      addToCart: state.addToCart,
+   }));
+
    return (
       <ListItem>
-         <Card sx={{ width: 240 , height: 350}}>
+         <Card sx={{ width: 240, height: 350 }}>
             <CardMedia
                component="img"
                height="130"
@@ -29,12 +35,17 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
                <Typography variant="h6">{item.price}$</Typography>
                {/* <Typography variant="body2">{item.description}</Typography> */}
                <CardActions>
-                  <Button variant="text">Comprar</Button>
+                  <Button onClick={() => addToCart(item)} variant="text">
+                     Comprar
+                  </Button>
                </CardActions>
             </CardContent>
          </Card>
       </ListItem>
    );
 };
+
+
+
 
 export default ProductCard;

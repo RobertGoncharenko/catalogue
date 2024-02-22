@@ -15,6 +15,10 @@ const nav: NavItem[] = [
     {
         link: "/about",
         caption: "About Us"
+    },
+    {
+        link: "/cart", 
+        caption: "Cart"
     }
 ];
 
