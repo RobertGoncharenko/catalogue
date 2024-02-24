@@ -2,7 +2,6 @@ import { FunctionComponent } from "react";
 import {
    Button,
    Card,
-   CardActions,
    CardContent,
    CardMedia,
    ListItem,
@@ -15,7 +14,6 @@ type ProductCardProps = {
    item: Product;
 };
 
-
 const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
    const { addToCart } = useCartStore((state) => ({
       addToCart: state.addToCart,
@@ -23,29 +21,33 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
 
    return (
       <ListItem>
-         <Card sx={{ width: 240, height: 350 }}>
+         <Card sx={{ width: 320, height: 320 }}>
             <CardMedia
                component="img"
-               height="130"
+               height="140"
                image={item.image}
                alt={item.title}
             />
-            <CardContent>
+            <div>
+               <Typography variant="h6">{item.category}</Typography>
                <Typography variant="h5">{item.title}</Typography>
+            </div>
+            <CardContent
+               sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+               }}
+            >
                <Typography variant="h6">{item.price}$</Typography>
                {/* <Typography variant="body2">{item.description}</Typography> */}
-               <CardActions>
-                  <Button onClick={() => addToCart(item)} variant="text">
-                     Comprar
-                  </Button>
-               </CardActions>
+               <Button onClick={() => addToCart(item)} variant="text">
+                  Buy
+               </Button>
             </CardContent>
          </Card>
       </ListItem>
    );
 };
-
-
-
 
 export default ProductCard;
