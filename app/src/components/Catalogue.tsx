@@ -8,6 +8,14 @@ import Search from "./Search";
 
 const Catalogue = () => {
     const [isGrid, setIsGrid] = useState(false);
+    const [filteredItems, setFilteredItems] = useState(items)
+
+    const handleSearch = (searchTerm: string) => {
+        const filtered = items.filter((item) => 
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredItems(filtered);
+    }
 
     return (
         <>
@@ -17,7 +25,7 @@ const Catalogue = () => {
                 alignContent={"center"} 
             >   
                 
-                    <Search />
+                    <Search onSearch={handleSearch} />
                 
                 <Box>
                     <Button onClick={() => setIsGrid(false)}><FormatListBulletedIcon /></Button>
@@ -27,7 +35,7 @@ const Catalogue = () => {
 
             {isGrid ? (
                 <Grid container spacing={1}>
-                    {items.map(item => (
+                    {filteredItems.map(item => (
                         <Grid item lg={3} md={4} sm={6} xs={12} key={item.id}>
                             <ProductCard item={item} />
                         </Grid>
@@ -35,7 +43,7 @@ const Catalogue = () => {
                 </Grid>
             ) : (
                 <List >
-                    {items.map(item => (
+                    {filteredItems.map(item => (
                         <ProductCard item={item} key={item.id} />
                     ))}
                 </List>

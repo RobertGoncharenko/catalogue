@@ -27,6 +27,7 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({ item }) => {
                height="140"
                image={item.image}
                alt={item.title}
+               loading="lazy"
             />
             <div>
                <Typography variant="h6">{item.category}</Typography>

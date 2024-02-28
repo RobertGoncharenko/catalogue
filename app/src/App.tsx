@@ -34,6 +34,7 @@ function App() {
                   display: "flex",
                   justifyContent: "space-between",
                   flexDirection: "row",
+                  width: "100%",
                }}
             >
                <MenuBurger />
@@ -46,7 +47,9 @@ function App() {
                   ))}
                </Box>
                <Box display="flex" justifyContent="space-between" color="#2080e0">
-                  <AccountCircleIcon sx={{ mr: 2 }} />
+                  <Link href="/profile" mx={1}>
+                     <AccountCircleIcon sx={{ mr: 2 }} />
+                  </Link>
                   <Link href="/cart" mx={1}>
                   <Badge color="error" badgeContent={count}>
                      <ShoppingCartIcon />

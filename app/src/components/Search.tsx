@@ -1,28 +1,34 @@
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Autocomplete from "@mui/material/Autocomplete";
-import items from "../constants/items";
 
+import { useState } from "react";
+import { Input } from "@mui/material";
 
-export default function Search() {
+interface SearchProps {
+   onSearch: (value: string) => void;
+}
+
+interface SearchProps {
+   onSearch: (value: string) => void;
+}
+
+export default function Search({ onSearch }: SearchProps) {
+   const [searchTerm, setSearchTerm] = useState("");
+
+   const handleSearch = (value: string | null) => {
+      if (value !== null) {
+         setSearchTerm(value);
+         onSearch(value);
+      }
+   };
+
    return (
-      <Stack spacing={2} sx={{ width: 340 }}>
-         <Autocomplete
-            freeSolo
-            id="free-solo-2-demo"
-            disableClearable
-            options={items.map((option) => option.title)}
-            renderInput={(params) => (
-               <TextField
-                  {...params}
-                  label="Search input"
-                  InputProps={{
-                     ...params.InputProps,
-                     type: "search",
-                  }}
-               />
-            )}
-         />
-      </Stack>
+      <Input
+      sx={{width: "40%"}}
+         value={searchTerm}
+         onChange={(e) => {
+            setSearchTerm(e.target.value);
+            handleSearch(e.target.value);
+         }}
+         placeholder="Search...."
+      />
    );
 }
