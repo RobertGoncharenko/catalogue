@@ -58,8 +58,16 @@ function App() {
                </Box>
             </Box>
          </Container>
-         <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="md">
+         <Container component="main" sx={{minHeight: "800px", mt: 8, mb: 2 }} maxWidth="md">
             <RouterProvider router={router} />
+         </Container>
+         <Container component="footer" sx={{ mt: 8, mb: 2 }} maxWidth="lg">
+         <Box display="flex" justifyContent="space-between" alignItems="center" flexDirection="row" bgcolor={"#2080e0"}>
+            <Typography variant="body2" color="text.secondary" align="center">
+                  
+                     &copy; {new Date().getFullYear()}
+            </Typography>
+         </Box>
          </Container>
       </ThemeProvider>
    );
