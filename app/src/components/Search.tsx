@@ -1,10 +1,5 @@
-
 import { useState } from "react";
 import { Input } from "@mui/material";
-
-interface SearchProps {
-   onSearch: (value: string) => void;
-}
 
 interface SearchProps {
    onSearch: (value: string) => void;

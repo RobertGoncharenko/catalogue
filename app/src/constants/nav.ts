@@ -16,6 +16,14 @@ const nav: NavItem[] = [
         link: "/about",
         caption: "About Us"
     },
+    {
+        link: "/signin",
+        caption: "Sign In"
+    },
+    {
+        link: "/signup",
+        caption: "Sign Up"
+    },
 ];
 
 export default nav;

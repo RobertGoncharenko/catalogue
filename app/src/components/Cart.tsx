@@ -1,4 +1,4 @@
-import useCartStore from "../store/store";
+import useCartStore from "../store/cartSlice";
 import { Box, Button, List, ListItem, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 

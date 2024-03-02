@@ -14,7 +14,7 @@ import nav from "./constants/nav";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuBurger from "./components/MenuBerger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import useCartStore from "./store/store";
+import useCartStore from "./store/cartSlice";
 
 const router = createBrowserRouter(routes);
 

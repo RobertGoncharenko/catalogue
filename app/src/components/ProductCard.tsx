@@ -8,7 +8,7 @@ import {
    Typography,
 } from "@mui/material";
 import { Product } from "../types";
-import useCartStore from "../store/store";
+import useCartStore from "../store/cartSlice";
 
 type ProductCardProps = {
    item: Product;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Drawer, IconButton, MenuItem } from "@mui/material";
+import { Divider, Drawer, IconButton, Link, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const MenuBurger = () => {
@@ -26,8 +26,13 @@ const MenuBurger = () => {
                onClick={handleToggleDrawer}
                onKeyDown={handleToggleDrawer}
             >
-               <MenuItem onClick={handleToggleDrawer}>Item 1</MenuItem>
-               <MenuItem onClick={handleToggleDrawer}>Item 2</MenuItem>
+               <MenuItem onClick={handleToggleDrawer}>
+                  <Link href="/" underline="none">Home</Link>
+               </MenuItem>
+               <MenuItem onClick={handleToggleDrawer}>
+               <Link href="/items" underline="none">Catalogue</Link>
+               </MenuItem>
+               <Divider variant="middle" />
                <MenuItem onClick={handleToggleDrawer}>Item 3</MenuItem>
                <MenuItem onClick={handleToggleDrawer}>Item 4</MenuItem>
                <MenuItem onClick={handleToggleDrawer}>Item 5</MenuItem>

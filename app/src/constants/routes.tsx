@@ -3,6 +3,8 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import Items from "../pages/Items";
 import ProfilePage from "../pages/ProfilePage";
+import Sigin from "../pages/Sigin";
+import SignUp from "../pages/SignUp";
 
 const routes = [
   {
@@ -24,6 +26,14 @@ const routes = [
   {
     path: "profile",
     element: <ProfilePage />,
+  },
+  {
+    path: "signin",
+    element: <Sigin />,
+  },
+  {
+    path: "signup",
+    element: <SignUp />,
   },
 ];
 

@@ -29,4 +29,5 @@ const useCartStore = create<CartStore>((set) => ({
    clearCart: () => set({ items: [] }, false),
 }));
 
+
 export default useCartStore;
